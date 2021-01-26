@@ -63,7 +63,7 @@
         
             Clave Unica:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
             <asp:TextBox ID="txtClaveUnica" runat="server" 
-                Width="249px" ViewStateMode="Disabled"  onkeypress="return valideKey(event);" pattern=".{1,3}" required title="1 a 3 es la longitud que se permite ingresar"></asp:TextBox>
+                Width="249px" ViewStateMode="Disabled"  onkeypress="return valideKey(event);" pattern=".{1,3}" required title="1 a 3 es la longitud que se permite ingresar" OnTextChanged="txtClaveUnica_TextChanged"></asp:TextBox>
         
         </div>
         <div>

@@ -12,6 +12,9 @@ using System.Linq.Expressions;
 using System.Collections;
 using UTTT.Ejemplo.Persona.Control;
 using UTTT.Ejemplo.Persona.Control.Ctrl;
+using System.Text;
+using System.Windows.Forms;
+
 
 #endregion
 
@@ -85,7 +88,7 @@ namespace UTTT.Ejemplo.Persona
                         this.TextBoxRFC.Text = this.baseEntity.RFC;
                         this.TextBoxTime.Text = this.baseEntity.calendar.ToString();
                         this.setItem(ref this.ddlSexo, baseEntity.CatSexo.strValor);
-                    }                
+                    }
                 }
 
             }
@@ -118,7 +121,7 @@ namespace UTTT.Ejemplo.Persona
                     dcGuardar.SubmitChanges();
                     this.showMessage("El registro se agrego correctamente.");
                     this.Response.Redirect("~/PersonaPrincipal.aspx", false);
-                    
+
                 }
                 if (this.idPersona > 0)
                 {
@@ -147,7 +150,7 @@ namespace UTTT.Ejemplo.Persona
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             try
-            {              
+            {
                 this.Response.Redirect("~/PersonaPrincipal.aspx", false);
             }
             catch (Exception _e)
@@ -164,7 +167,7 @@ namespace UTTT.Ejemplo.Persona
                 Expression<Func<CatSexo, bool>> predicateSexo = c => c.id == idSexo;
                 predicateSexo.Compile();
                 List<CatSexo> lista = dcGlobal.GetTable<CatSexo>().Where(predicateSexo).ToList();
-                CatSexo catTemp = new CatSexo();            
+                CatSexo catTemp = new CatSexo();
                 this.ddlSexo.DataTextField = "strValor";
                 this.ddlSexo.DataValueField = "id";
                 this.ddlSexo.DataSource = lista;
@@ -176,11 +179,96 @@ namespace UTTT.Ejemplo.Persona
             }
         }
 
-        #endregion
+        //public bool Validacion(Linq.Data.Entity.Persona _persona, ref String _mensaje) {
+        //    if (_persona.idCatSexo.Equals(-1)) {
+        //        _mensaje = "Seleccione un sexo";
+        //        return false;
+        //    }
+        //}
 
-        #region Metodos
+        public bool ValidarCampos(Linq.Data.Entity.Persona persona, ref String _mensaje)
+        {
+            if (persona.idCatSexo.Equals(-1))
+            {
+                Response.Write("Seleccione un sexo");
+                return false;
+            }
+            if (persona.strClaveUnica.Equals(string.Empty)) {
+                _mensaje = "clave unica es obligatoria";
+                return false;
+            }
+            if (persona.strClaveUnica.Length !=3)
+            {
+                _mensaje = "clave unica es obligatoria";
+                return false;
+            }
+            if (persona.strNombre.Length > 50) {
+                _mensaje = "le tamaño maximo es de 50 letras";
+                return false;
+            }
+            if (persona.strNombre.Equals(string.Empty))
+            {
+                _mensaje = "Nombre es obligatoria";
+                return false;
+            }
+            if (persona.strAPaterno.Length > 50)
+            {
+                _mensaje = "le tamaño maximo es de 50 letras";
+                return false;
+            }
+            if (persona.strAPaterno.Equals(string.Empty))
+            {
+                _mensaje = "Nombre es obligatoria";
+                return false;
+            }
+            if (persona.strAMaterno.Length > 50)
+            {
+                _mensaje = "le tamaño maximo es de 50 letras";
+                return false;
+            }
+            if (persona.strAMaterno.Equals(string.Empty))
+            {
+                _mensaje = "Nombre es obligatoria";
+                return false;
+            }
+            if (persona.intNumeroDeHermanos > 10) {
+                _mensaje = "No te cremos que tengas esa cantidad de hermanos";
+                return false;
+            }
+            if (persona.intNumeroDeHermanos < 0) {
+                _mensaje = "debes ingresar un nomero de herman@s";
+                return false;
+            }
+            if (persona.Correo == "[a - zA - Z0 - 9_] + ([.][a - zA - Z0 - 9_] +) *@[a-zA - Z0 - 9_]+([.][a - zA - Z0 - 9_] +) *[.][a - zA - Z]{ 1,5}")
+            {
+                _mensaje = "Correo no valido";
+                return false;
+            }
+            int Validar = (int.Parse(TextBoxDia.Text) * 24 * 60 * 60)+(int.Parse(TextBoxMes.Text)*30*60*60)+((2021-int.Parse(TextBoxAño.Text))*365*24*60*60);
+            int may = 568024668;
+            if (Validar < may) {
+                _mensaje = "que cres que ases crio!, no ere mayor de edad :O ";
+                return false;
+            }
+            if (persona.Code_postal.ToString() == "^d{5}(?:[-s]d{4})?$")
+            {
+                _mensaje = "codigo postal no es valido";
+                return false;
+            }
+            if (persona.RFC == "^([A-ZÑ\x26]{3,4}([0-9]{2})(0[1-9]|1[0-2])(0[1-9]|1[0-9]|2[0-9]|3[0-1]))((-)?([A-Z]{3}))?")
+            {
+                _mensaje = "codigo postal no es valido";
+                return false;
+            }
+            return true;
+        }
 
-        public void setItem(ref DropDownList _control, String _value)
+
+            #endregion
+
+            #region Metodos
+
+            public void setItem(ref DropDownList _control, String _value)
         {
             foreach (ListItem item in _control.Items)
             {
@@ -202,7 +290,7 @@ namespace UTTT.Ejemplo.Persona
 
         protected void TextBoxTime_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
@@ -211,6 +299,34 @@ namespace UTTT.Ejemplo.Persona
             TextBoxMes.Text = Calendar.SelectedDate.AddDays(7).Month.ToString();
             TextBoxAño.Text = Calendar.SelectedDate.AddDays(7).Year.ToString();
             TextBoxTime.Text = Calendar.SelectedDate.AddDays(7).ToShortDateString();
+
+            int diaCumple = 1;
+            int mesCumple = 10;
+            int anioCumple = 2010;
+            DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
+            int edad = (DateTime.Now.Subtract(fechaNacimiento).Days / 365);
+            DateTime proximoCumple;
+            if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
+                proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
+            else
+            proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
+            TimeSpan faltan = proximoCumple.Subtract(DateTime.Now);
+            StringBuilder sb = new StringBuilder();
+            //sb.AppendFormat("Usted Tiene {0} Años ", edad);
+            if (edad > 18)
+            {
+                sb.AppendFormat("Usted Tiene {0} Años es mayor de edad ", edad); 
+            }
+            else {
+                sb.AppendFormat("Usted Tiene {0} Años no es mayo de edad", edad);
+                MessageBox.Show("alerta",sb.ToString());
+            }
+        }
+
+        protected void txtClaveUnica_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
+
 }
