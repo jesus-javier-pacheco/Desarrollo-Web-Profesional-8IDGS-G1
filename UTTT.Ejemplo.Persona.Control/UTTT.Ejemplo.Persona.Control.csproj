@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="CtrlValidaInyeccion.cs" />
     <Compile Include="Ctrl\Conexion.cs" />
     <Compile Include="Ctrl\CtrlDireccion.cs" />
     <Compile Include="Ctrl\CtrlMessage.cs" />

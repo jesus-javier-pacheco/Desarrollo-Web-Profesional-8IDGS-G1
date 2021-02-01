@@ -25,3 +25,10 @@ D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Man
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.csproj.CoreCompileInputs.cache
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.dll
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\bin\Debug\UTTT.Ejemplo.Linq.Data.dll.config
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\bin\Debug\UTTT.Ejemplo.Linq.Data.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\bin\Debug\UTTT.Ejemplo.Linq.Data.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.csprojAssemblyReference.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.csproj.CoreCompileInputs.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Linq.Data\obj\Debug\UTTT.Ejemplo.Linq.Data.pdb

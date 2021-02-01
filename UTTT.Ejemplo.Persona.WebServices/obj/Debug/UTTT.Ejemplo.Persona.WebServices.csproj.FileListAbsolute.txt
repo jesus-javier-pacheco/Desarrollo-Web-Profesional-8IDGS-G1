@@ -36,3 +36,16 @@ D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Man
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.csproj.CopyComplete
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.dll
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Persona.WebServices.dll.config
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Persona.WebServices.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Persona.WebServices.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Linq.Data.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Persona.Data.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Linq.Data.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Linq.Data.dll.config
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\bin\UTTT.Ejemplo.Persona.Data.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.csprojAssemblyReference.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.csproj.CoreCompileInputs.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.csproj.CopyComplete
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.WebServices\obj\Debug\UTTT.Ejemplo.Persona.WebServices.pdb

@@ -14,6 +14,8 @@ using UTTT.Ejemplo.Persona.Control;
 using UTTT.Ejemplo.Persona.Control.Ctrl;
 using System.Text;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
 
 
 #endregion
@@ -29,6 +31,7 @@ namespace UTTT.Ejemplo.Persona
         private UTTT.Ejemplo.Linq.Data.Entity.Persona baseEntity;
         private DataContext dcGlobal = new DcGeneralDataContext();
         private int tipoAccion = 0;
+        string mensaje;
 
         #endregion
 
@@ -86,7 +89,7 @@ namespace UTTT.Ejemplo.Persona
                         this.TextBoxEmail.Text = this.baseEntity.Correo;
                         this.TextBoxCode_postal.Text = this.baseEntity.Code_postal.ToString();
                         this.TextBoxRFC.Text = this.baseEntity.RFC;
-                        this.TextBoxTime.Text = this.baseEntity.calendar.ToString();
+                        
                         this.setItem(ref this.ddlSexo, baseEntity.CatSexo.strValor);
                     }
                 }
@@ -117,6 +120,15 @@ namespace UTTT.Ejemplo.Persona
                     persona.calendar = DateTime.Parse(Calendar.SelectedDate.ToString());
                     persona.Correo = this.TextBoxEmail.Text.Trim();
                     persona.Code_postal = int.Parse(this.TextBoxCode_postal.Text);
+                    persona.RFC = this.TextBoxRFC.Text.Trim();
+                    if (!this.ValidarCampos(persona, ref mensaje, TextBoxDia.Text, TextBoxMes.Text, TextBoxAño.Text))
+                    {
+
+                        //this.lblMensaje.Text = mensaje;
+                        //this.lblMensaje.Visible = true;
+                        MessageBox.Show(mensaje);
+                        return;
+                    }
                     dcGuardar.GetTable<UTTT.Ejemplo.Linq.Data.Entity.Persona>().InsertOnSubmit(persona);
                     dcGuardar.SubmitChanges();
                     this.showMessage("El registro se agrego correctamente.");
@@ -186,7 +198,7 @@ namespace UTTT.Ejemplo.Persona
         //    }
         //}
 
-        public bool ValidarCampos(Linq.Data.Entity.Persona persona, ref String _mensaje)
+        public bool ValidarCampos(Linq.Data.Entity.Persona persona, ref String _mensaje, string dia, string mes, string año)
         {
             if (persona.idCatSexo.Equals(-1))
             {
@@ -263,12 +275,121 @@ namespace UTTT.Ejemplo.Persona
             return true;
         }
 
+        public new void Error(string error)
+        {
+            string body = error;
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.Credentials = new NetworkCredential("18300496@uttt.edu.mx", "JOP1226J");
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.EnableSsl = true;
+            smtp.UseDefaultCredentials = false;
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("18300496@uttt.edu.mx", "Error en mi servicodor de somee.com buscate otro XD");
+            mail.To.Add(new MailAddress("18300496@uttt.edu.mx"));
+            mail.Subject = ("Error");
+            mail.Body = body;
+            smtp.Send(mail);
+        }
 
-            #endregion
+        public bool ValidacionSQL(ref String _mensaje)
+        {
+            CtrlValidaInyeccion valida = new CtrlValidaInyeccion();
+            string mensajeFuncion = string.Empty;
+            if (valida.SQLInyectionValida(this.txtClaveUnica.Text.Trim(), ref mensajeFuncion, "Clave unica", ref this.txtClaveUnica))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtNombre.Text.Trim(), ref mensajeFuncion, "Nombre", ref this.txtNombre))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtAPaterno.Text.Trim(), ref mensajeFuncion, "Apellido Paterno", ref this.txtAPaterno))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtAMaterno.Text.Trim(), ref mensajeFuncion, "Apellido Materno", ref this.txtAMaterno))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxHermano.Text.Trim(), ref mensajeFuncion, "Hermanos", ref this.TextBoxHermano))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxEmail.Text.Trim(), ref mensajeFuncion, "Email", ref this.TextBoxEmail))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxCode_postal.Text.Trim(), ref mensajeFuncion, "Codigo Postal", ref this.TextBoxCode_postal))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxRFC.Text.Trim(), ref mensajeFuncion, "RFC", ref this.TextBoxRFC))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            return true;
+        }
 
-            #region Metodos
+        public bool ValidacionHtml(ref String _mensaje)
+        {
+            CtrlValidaInyeccion valida = new CtrlValidaInyeccion();
+            string mensajeFuncion = string.Empty;
+            if (valida.SQLInyectionValida(this.txtClaveUnica.Text.Trim(), ref mensajeFuncion, "Clave unica", ref this.txtClaveUnica))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtNombre.Text.Trim(), ref mensajeFuncion, "Nombre", ref this.txtNombre))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtAPaterno.Text.Trim(), ref mensajeFuncion, "Apellido Paterno", ref this.txtAPaterno))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.txtAMaterno.Text.Trim(), ref mensajeFuncion, "Apellido Materno", ref this.txtAMaterno))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxHermano.Text.Trim(), ref mensajeFuncion, "Hermanos", ref this.TextBoxHermano))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxEmail.Text.Trim(), ref mensajeFuncion, "Email", ref this.TextBoxEmail))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxCode_postal.Text.Trim(), ref mensajeFuncion, "Codigo Postal", ref this.TextBoxCode_postal))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            if (valida.SQLInyectionValida(this.TextBoxRFC.Text.Trim(), ref mensajeFuncion, "RFC", ref this.TextBoxRFC))
+            {
+                _mensaje = mensajeFuncion;
+                return false;
+            }
+            return true;
+        }
 
-            public void setItem(ref DropDownList _control, String _value)
+        #endregion
+
+        #region Metodos
+
+        public void setItem(ref DropDownList _control, String _value)
         {
             foreach (ListItem item in _control.Items)
             {
@@ -298,34 +419,42 @@ namespace UTTT.Ejemplo.Persona
             TextBoxDia.Text = Calendar.SelectedDate.Day.ToString();
             TextBoxMes.Text = Calendar.SelectedDate.AddDays(7).Month.ToString();
             TextBoxAño.Text = Calendar.SelectedDate.AddDays(7).Year.ToString();
-            TextBoxTime.Text = Calendar.SelectedDate.AddDays(7).ToShortDateString();
+            
 
-            int diaCumple = 1;
-            int mesCumple = 10;
-            int anioCumple = 2010;
-            DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
-            int edad = (DateTime.Now.Subtract(fechaNacimiento).Days / 365);
-            DateTime proximoCumple;
-            if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
-                proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
-            else
-            proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
-            TimeSpan faltan = proximoCumple.Subtract(DateTime.Now);
-            StringBuilder sb = new StringBuilder();
-            //sb.AppendFormat("Usted Tiene {0} Años ", edad);
-            if (edad > 18)
-            {
-                sb.AppendFormat("Usted Tiene {0} Años es mayor de edad ", edad); 
-            }
-            else {
-                sb.AppendFormat("Usted Tiene {0} Años no es mayo de edad", edad);
-                MessageBox.Show("alerta",sb.ToString());
-            }
+            //int diaCumple = 1;
+            //int mesCumple = 10;
+            //int anioCumple = 2010;
+            //DateTime fechaNacimiento = new DateTime(anioCumple, mesCumple, diaCumple);
+            //int edad = (DateTime.Now.Subtract(fechaNacimiento).Days / 365);
+            //DateTime proximoCumple;
+            //if (DateTime.Now.Month <= mesCumple && DateTime.Now.Day <= diaCumple)
+            //    proximoCumple = new DateTime(DateTime.Now.AddYears(1).Year, mesCumple, diaCumple);
+            //else
+            //proximoCumple = new DateTime(DateTime.Now.Year, mesCumple, diaCumple);
+            //TimeSpan faltan = proximoCumple.Subtract(DateTime.Now);
+            //StringBuilder sb = new StringBuilder();
+            ////sb.AppendFormat("Usted Tiene {0} Años ", edad);
+            //if (edad > 18)
+            //{
+            //    sb.AppendFormat("Usted Tiene {0} Años es mayor de edad ", edad); 
+            //}
+            //else {
+            //    sb.AppendFormat("Usted Tiene {0} Años no es mayo de edad", edad);
+            //    MessageBox.Show("alerta",sb.ToString());
+            //}
         }
 
         protected void txtClaveUnica_TextChanged(object sender, EventArgs e)
         {
             
+        }
+        protected void birthday(object sender, EventArgs e) {
+             
+        }
+
+        protected void TextBoxAño_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

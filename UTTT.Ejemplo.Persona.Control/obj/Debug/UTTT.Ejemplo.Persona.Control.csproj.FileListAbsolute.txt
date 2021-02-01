@@ -23,3 +23,12 @@ D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Man
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.csproj.CopyComplete
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.dll
 D:\Escritorio\uttt-(desarrollo y gestion de sofware)\8IDGS-G1\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\bin\Debug\UTTT.Ejemplo.Persona.Control.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\bin\Debug\UTTT.Ejemplo.Persona.Control.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\bin\Debug\UTTT.Ejemplo.Persona.Data.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\bin\Debug\UTTT.Ejemplo.Persona.Data.pdb
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.csprojAssemblyReference.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.csproj.CoreCompileInputs.cache
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.csproj.CopyComplete
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.dll
+D:\Escritorio\Desarrollo Web\Manuales\Manual\UTTT.Ejemplo.Persona\UTTT.Ejemplo.Persona.Control\obj\Debug\UTTT.Ejemplo.Persona.Control.pdb
